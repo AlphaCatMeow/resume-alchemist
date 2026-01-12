@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, FileText, Target, Wand2, Zap, ArrowLeft } from 'lucide-react';
+import { Sparkles, ArrowRight, FileText, Target, Wand2, Zap, ArrowLeft, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { IndustrySelector } from '@/components/IndustrySelector';
@@ -87,31 +87,44 @@ export default function Index() {
       {/* Header */}
       <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-3">
-            {/* 返回按钮（非首页时显示） */}
-            {step !== 'landing' && (
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={() => setStep(getBackStep())}
-                className="mr-2"
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              {/* 返回按钮（非首页时显示） */}
+              {step !== 'landing' && (
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  onClick={() => setStep(getBackStep())}
+                  className="mr-2"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </Button>
+              )}
+              
+              {/* Logo - 点击返回首页 */}
+              <button 
+                onClick={handleGoHome}
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
               >
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-            )}
+                <div className="p-2 rounded-xl bg-gradient-ai">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+                <h1 className="text-xl font-bold">
+                  <span className="text-gradient-ai">简历炼金术</span>
+                </h1>
+              </button>
+            </div>
             
-            {/* Logo - 点击返回首页 */}
-            <button 
-              onClick={handleGoHome}
-              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            {/* GitHub 链接 */}
+            <a
+              href="https://github.com/Anarkh-Lee/resume-alchemist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              title="在 GitHub 上 Star 我"
             >
-              <div className="p-2 rounded-xl bg-gradient-ai">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <h1 className="text-xl font-bold">
-                <span className="text-gradient-ai">简历炼金术</span>
-              </h1>
-            </button>
+              <Github className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+            </a>
           </div>
         </div>
       </header>
