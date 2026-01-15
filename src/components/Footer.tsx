@@ -96,6 +96,22 @@ export function Footer() {
 
         <div className="mt-6 pt-4 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
           <p>© 2026 简历炼金术 Resume Alchemist By Anarkh-Lee</p>
+          
+          {/* 不蒜子统计 */}
+          <div className="flex items-center gap-3 text-xs text-muted-foreground/80">
+            <span className="flex items-center gap-1">
+              <span className="text-muted-foreground/60">👀</span>
+              <span>访问量：</span>
+              <span id="busuanzi_value_site_pv" className="text-primary font-medium">-</span>
+            </span>
+            <span className="text-border/50">·</span>
+            <span className="flex items-center gap-1">
+              <span className="text-muted-foreground/60">👥</span>
+              <span>访客数：</span>
+              <span id="busuanzi_value_site_uv" className="text-primary font-medium">-</span>
+            </span>
+          </div>
+          
           <p>Powered by AI ✨</p>
         </div>
       </div>
